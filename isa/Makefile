@@ -11,8 +11,8 @@ include $(src_dir)/rv64ui/Makefrag
 #include $(src_dir)/rv64uc/Makefrag
 include $(src_dir)/rv64um/Makefrag
 include $(src_dir)/rv64ua/Makefrag
-#include $(src_dir)/rv64uf/Makefrag
-#include $(src_dir)/rv64ud/Makefrag
+include $(src_dir)/rv64uf/Makefrag
+include $(src_dir)/rv64ud/Makefrag
 #include $(src_dir)/rv64uzfh/Makefrag
 include $(src_dir)/rv64si/Makefrag
 #include $(src_dir)/rv64ssvnapot/Makefrag
@@ -94,16 +94,16 @@ endef
 #$(eval $(call compile_template,rv32si,-march=rv32g -mabi=ilp32))
 #$(eval $(call compile_template,rv32mi,-march=rv32g -mabi=ilp32))
 ifeq ($(XLEN),64)
-$(eval $(call compile_template,rv64ui,-march=rv64g -mabi=lp64))
-#$(eval $(call compile_template,rv64uc,-march=rv64g -mabi=lp64))
-$(eval $(call compile_template,rv64um,-march=rv64g -mabi=lp64))
-$(eval $(call compile_template,rv64ua,-march=rv64g -mabi=lp64))
-#$(eval $(call compile_template,rv64uf,-march=rv64g -mabi=lp64))
-#$(eval $(call compile_template,rv64ud,-march=rv64g -mabi=lp64))
-#$(eval $(call compile_template,rv64uzfh,-march=rv64g_zfh -mabi=lp64))
-$(eval $(call compile_template,rv64si,-march=rv64g -mabi=lp64))
-#$(eval $(call compile_template,rv64ssvnapot,-march=rv64g -mabi=lp64))
-$(eval $(call compile_template,rv64mi,-march=rv64g -mabi=lp64))
+$(eval $(call compile_template,rv64ui,-march=rv64g -mabi=lp64d))
+#$(eval $(call compile_template,rv64uc,-march=rv64g -mabi=lp64d))
+$(eval $(call compile_template,rv64um,-march=rv64g -mabi=lp64d))
+$(eval $(call compile_template,rv64ua,-march=rv64g -mabi=lp64d))
+$(eval $(call compile_template,rv64uf,-march=rv64g -mabi=lp64d))
+$(eval $(call compile_template,rv64ud,-march=rv64g -mabi=lp64d))
+#$(eval $(call compile_template,rv64uzfh,-march=rv64g_zfh -mabi=lp64d))
+$(eval $(call compile_template,rv64si,-march=rv64g -mabi=lp64d))
+#$(eval $(call compile_template,rv64ssvnapot,-march=rv64g -mabi=lp64d))
+$(eval $(call compile_template,rv64mi,-march=rv64g -mabi=lp64d))
 endif
 
 tests_dump = $(addsuffix .dump, $(tests))
