@@ -8,7 +8,7 @@ src_dir := .
 
 ifeq ($(XLEN),64)
 include $(src_dir)/rv64ui/Makefrag
-#include $(src_dir)/rv64uc/Makefrag
+include $(src_dir)/rv64uc/Makefrag
 include $(src_dir)/rv64um/Makefrag
 include $(src_dir)/rv64ua/Makefrag
 include $(src_dir)/rv64uf/Makefrag
@@ -95,7 +95,7 @@ endef
 #$(eval $(call compile_template,rv32mi,-march=rv32g -mabi=ilp32))
 ifeq ($(XLEN),64)
 $(eval $(call compile_template,rv64ui,-march=rv64g -mabi=lp64d))
-#$(eval $(call compile_template,rv64uc,-march=rv64g -mabi=lp64d))
+$(eval $(call compile_template,rv64uc,-march=rv64g -mabi=lp64d))
 $(eval $(call compile_template,rv64um,-march=rv64g -mabi=lp64d))
 $(eval $(call compile_template,rv64ua,-march=rv64g -mabi=lp64d))
 $(eval $(call compile_template,rv64uf,-march=rv64g -mabi=lp64d))
